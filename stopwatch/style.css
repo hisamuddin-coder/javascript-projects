@@ -1,0 +1,57 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #fff;
+  background-color: #000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+}
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+.stopwatch {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 2rem;
+}
+.stopwatch__timer {
+  color: rgb(255, 165, 0);
+  text-align: center;
+  font-size: 5.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.stopwatch__timer .msUnit {
+  font-size: 2.5rem;
+}
+.stopwatch__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.stopwatch__btn {
+  color: #fff;
+  background-color: rgba(255, 166, 0, 0.434);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  width: 100px;
+  padding: 12px;
+  cursor: pointer;
+}
+.stopwatch__btn:nth-child(2) {
+  background-color: green;
+}
