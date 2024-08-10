@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  color: #373737;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header,
+main,
+footer,
+.left,
+.right,
+.game__board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/*==== Header ===*/
+header {
+  height: 100px;
+  background-color: #51a8ff;
+}
+h1 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+/*==== Main ===*/
+main {
+  position: relative;
+  height: calc(100vh - 130px);
+}
+.left {
+  flex: 1;
+}
+.game__board {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50, -50%);
+}
+.right {
+  flex: 1;
+}
+/*==== Footer ===*/
+footer {
+  height: 30px;
+  background-color: #222;
+}
+footer p {
+  color: #f1f1f1;
+  font-size: 14px;
+  font-weight: 300;
+}
