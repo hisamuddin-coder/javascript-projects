@@ -73,7 +73,7 @@ p {
 .secret__number {
   width: 200px;
   height: 200px;
-  background-color: crimson;
+  background-color: #dc143c;
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-size: 10rem;
