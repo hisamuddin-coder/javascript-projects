@@ -4,60 +4,90 @@
   box-sizing: border-box;
 }
 body {
-  height: 100vh;
-  color: #373737;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #fff;
+  background-color: #31363f;
+  /* background-color: #76abae; */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 header,
 main,
 footer,
 .left,
 .right,
-.game__board {
+.center {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
-/*==== Header ===*/
 header {
   height: 100px;
-  background-color: #51a8ff;
+  background-color: #222831;
+  text-align: center;
 }
 h1 {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2.5rem;
 }
-/*==== Main ===*/
 main {
   position: relative;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 100px - 30px);
+}
+.left,
+.right {
+  flex: 1;
+  height: 100%;
 }
 .left {
-  flex: 1;
+  flex-direction: column;
 }
-.game__board {
+input,
+button {
+  border: none;
+  outline: none;
+  background-color: #d4d4d4;
+  font-weight: bold;
+}
+input {
+  width: 11rem;
+  height: 5.5rem;
+  color: #222831;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+button {
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1.5px;
+}
+.center {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50, -50%);
+  transform: translate(-50%, -50%);
+  flex-direction: column;
 }
-.right {
-  flex: 1;
+.secret__number {
+  width: 200px;
+  height: 200px;
+  background-color: crimson;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 10rem;
+  margin-bottom: 2rem;
 }
-/*==== Footer ===*/
+.play__btn {
+  display: none;
+}
 footer {
   height: 30px;
-  background-color: #222;
+  background-color: #222831;
+  text-align: center;
 }
 footer p {
-  color: #f1f1f1;
   font-size: 14px;
-  font-weight: 300;
+  margin-bottom: 0;
 }
