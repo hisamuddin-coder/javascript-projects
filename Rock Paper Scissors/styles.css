@@ -4,67 +4,81 @@
   box-sizing: border-box;
 }
 :root {
-  --color: #f3f3f3;
+  --dark-color: #353535;
 }
 body {
-  color: var(--color);
+  color: var(--dark-color);
+  background-color: #ddd;
   text-align: center;
-  background-color: #191a19;
-  height: 100vh;
+  letter-spacing: 1.5px;
 }
-.game__board {
-  width: 600px;
-  max-width: 600px;
-  height: 100vh;
-  margin: auto;
-  background-color: #040303;
-  padding: 2rem;
-}
-.game__result {
+.flex {
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
 }
-.game__result-element {
+header {
+  height: 5vh;
+  background-color: var(--dark-color);
+}
+header h1 {
+  color: #eee;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+main {
+  width: 600px;
+  height: calc(100vh - 5vh);
+  max-width: 600px;
+  margin: auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px -20px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.display__moves {
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.display__move-user,
+.display__move-comp {
+  text-align: center;
+}
+.display__move-user span,
+.display__move-comp span {
+  font-size: 4.25rem;
+}
+.result__message {
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
-.game__result-element span {
-  font-size: 5rem;
-}
-.game__menu {
-  margin-bottom: 2rem;
-}
-.message {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: lighter;
-  letter-spacing: 1.2px;
-  margin-bottom: 2rem;
-}
-.game__menu-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.move-btn-container {
+  gap: 3rem;
   margin-bottom: 5rem;
 }
-button {
+.move-btn,
+.reset {
+  color: inherit;
+  font-size: 5rem;
   border: none;
   outline: none;
-  font-size: 5rem;
   background: transparent;
+  flex-direction: column;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-button span {
+.move-btn span {
   display: block;
   font-size: 1rem;
-  text-transform: uppercase;
-  color: #fff;
   margin-top: 5px;
 }
-
 .score__board {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.5rem;
   gap: 2rem;
+  margin-bottom: 2rem;
+}
+.reset {
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  border: 2px solid currentColor;
 }

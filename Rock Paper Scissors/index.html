@@ -5,49 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
   </head>
   <body>
-    <section class="game__board">
-      <header class="game__result">
-        <div class="game__result-element">
-          <span class="result-element">🤜</span>
+    <header class="flex">
+      <h1 class="title">Rock, Paper & Scissors</h1>
+    </header>
+    <main>
+      <section class="display__moves flex">
+        <div class="display__move-user display__move">
+          <span class="user__move-element">🤜</span>
         </div>
-        <div class="game__result-element">
-          <span class="result-element">🤛</span>
+        <div class="display__move-comp display__move">
+          <span class="comp__move-element">🤛</span>
         </div>
-      </header>
-      <main class="game__menu">
-        <p class="message">Let's Play!</p>
-        <div class="game__menu-buttons">
-          <button class="game__menu-button">
-            🤘
-            <span class="menu__button-text">Rock</span>
-          </button>
-          <button class="game__menu-button">
-            ✊
-            <span class="menu__button-text">Paper</span>
-          </button>
-          <button class="game__menu-button">
-            ✌️
-            <span class="menu__button-text">Scissors</span>
-          </button>
-        </div>
-      </main>
-      <footer class="score__board">
+      </section>
+      <p class="result__message">Let's Play!</p>
+      <section class="move-btn-container flex">
+        <button class="move-btn rock-move flex" data-id="rock">
+          🤘
+          <span class="move-btn-text">Rock</span>
+        </button>
+        <button class="move-btn paper-move flex" data-id="paper">
+          ✊
+          <span class="move-btn-text">Paper</span>
+        </button>
+        <button class="move-btn scissors-move flex" data-id="scissors">
+          ✌️
+          <span class="move-btn-text">Scissors</span>
+        </button>
+      </section>
+      <section class="score__board flex">
         <p class="score__win score">
           <strong>Won: </strong>
           <span class="score__won-status score__status">0</span>
         </p>
         <p class="score__tie score">
           <strong>Ties: </strong>
-          <span class="score__tie-status history-status">0</span>
+          <span class="score__tie-status score-status">0</span>
         </p>
         <p class="score__loss score">
           <strong>Losses: </strong>
-          <span class="score__loss-status history-status">0</span>
+          <span class="score__loss-status score-status">0</span>
         </p>
-      </footer>
-    </section>
+      </section>
+      <button class="reset">Reset</button>
+    </main>
   </body>
 </html>
