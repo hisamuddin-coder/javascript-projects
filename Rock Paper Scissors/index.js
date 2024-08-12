@@ -1,61 +1,114 @@
-const displayMove = document.querySelectorAll(".display__move");
-const displayMoveUser = document.querySelector(".display__move-user");
-const displayMoveComp = document.querySelector(".display__move-comp");
-const resultMessage = document.querySelector(".result__message");
-const moveBtns = document.querySelectorAll(".move-btn");
-const rockMoveBtns = document.querySelector(".rock-move");
-const paperMoveBtns = document.querySelector(".paper-move");
-const scissorsMoveBtns = document.querySelector(".scissors-move");
-const scoreWin = document.querySelector(".score__win");
-const scoreTie = document.querySelector(".score__tie");
-const scoreLoss = document.querySelector(".score__loss");
-const resetBtn = document.querySelector(".reset");
+// selectors
+
+const displayUserResultIcons = document.querySelector(".result-user");
+const displayComputerResultIcons = document.querySelector(".result-computer");
+const displayResultMessage = document.querySelector(".result-message");
+const moves = document.querySelectorAll(".move");
+
+const displayScoresWinsElement = document.querySelector(".scores-wins-element");
+const displayScoresTiesElement = document.querySelector(".scores-ties-element");
+const displayScoresLossesElement = document.querySelector(
+  ".scores-losses-element"
+);
+const resetBtn = document.querySelector(".btn-reset");
+
+const scoresObject = JSON.parse(localStorage.getItem("scores")) || {
+  wins: 0,
+  ties: 0,
+  losses: 0,
+};
 
 let randomNumber;
-moveBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    playGame(btn);
+
+moves.forEach((move) => {
+  move.addEventListener("click", () => {
+    handlePlayGame(move);
   });
 });
 
-function playGame(userSelect) {
-  randomNumber = Math.random();
-  const computerMove = renderComputerMove();
-  const userMove = userSelect.dataset.id;
-  const userMoveIcon = getMoveIcon(userMove);
-  const computerMoveIcon = getMoveIcon(computerMove);
-  displayMoveUser.innerHTML = `<span class="user__move-element">${userMoveIcon}</span>`;
-  displayMoveComp.innerHTML = `<span class="comp__move-element">${computerMoveIcon}</span>`;
-}
+resetBtn.addEventListener("click", () => {
+  handleReset();
+});
 
-function renderComputerMove() {
+const handlePlayGame = function (userSelect) {
+  randomNumber = Math.random();
+  const computerMove = handleComputerMove();
+  const userMove = userSelect.dataset.id;
+
+  const computerMoveIcon = handleMoveIcons(computerMove);
+  const userMoveIcon = handleMoveIcons(userMove);
+
+  displayUserResultIcons.innerHTML = `<i class="fa-regular ${userMoveIcon} result-user-icon"></i>`;
+  displayComputerResultIcons.innerHTML = `<i class="fa-regular ${computerMoveIcon} result-computer-icon"></i>`;
+
+  displayResultMessage.innerHTML = handleGameResult(userMove);
+  handleScoresObject(userMove);
+};
+
+const handleComputerMove = function () {
   if (randomNumber < 1 / 3) {
     return "rock";
   } else if (randomNumber < 2 / 3) {
     return "paper";
   }
   return "scissors";
-}
-function getMoveIcon(move) {
+};
+const handleMoveIcons = function (move) {
   if (move === "rock") {
-    return "👊";
+    return "fa-hand-back-fist";
   } else if (move === "paper") {
-    return "🫱";
+    return "fa-hand";
   } else if (move === "scissors") {
-    return "✌️";
+    return `fa-hand-scissors"`;
   }
-}
-function makeResult(userMove) {
-  const computerMove = renderComputerMove();
+};
+// game logic
+const handleGameResult = function (userMove) {
+  const computerMove = handleComputerMove();
   if (userMove === computerMove) {
-    return "Tie.";
+    return "Game Tie.";
   }
   if (
     (userMove === "rock" && computerMove === "scissors") ||
     (userMove === "paper" && computerMove === "rock") ||
     (userMove === "scissors" && computerMove === "paper")
   ) {
-    return "You won.";
+    return "You Win the Game!";
   }
-  return "Computer won.";
-}
+  return "Computer win the Game!";
+};
+
+const handleScoresObject = function (userMove) {
+  const scores = handleGameResult(userMove);
+  if (scores === "Game Tie.") {
+    scoresObject.ties++;
+  } else if (scores === "You Win the Game!") {
+    scoresObject.wins++;
+  } else if (scores === "Computer win the Game!") {
+    scoresObject.losses++;
+  }
+  handleScoresDisplay();
+  localStorage.setItem("scores", JSON.stringify(scoresObject));
+};
+
+const handleScoresDisplay = function () {
+  displayScoresWinsElement.textContent = scoresObject.wins;
+  displayScoresTiesElement.textContent = scoresObject.ties;
+  displayScoresLossesElement.textContent = scoresObject.losses;
+};
+handleScoresDisplay();
+
+const handleReset = function () {
+  for (let key in scoresObject) {
+    scoresObject[key] = 0;
+  }
+
+  handleScoresDisplay();
+  localStorage.setItem("scores", JSON.stringify(scoresObject));
+
+  displayComputerResultIcons.innerHTML = `<i class="fa-regular fa-hand-back-fist result-user-icon"></i>`;
+
+  displayComputerResultIcons.innerHTML = `<i class="fa-regular fa-hand-back-fist result-user-icon"></i>`;
+
+  displayResultMessage.innerHTML = "Let's play";
+};

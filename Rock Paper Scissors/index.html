@@ -3,53 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock Paper Scissors</title>
+    <title>Rock,Paper & Scissors</title>
+
     <link rel="stylesheet" href="styles.css" />
-    <script defer src="index.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <header class="flex">
-      <h1 class="title">Rock, Paper & Scissors</h1>
+    <header class="header flex">
+      <h1>Rock,Paper & Scissors</h1>
     </header>
-    <main>
-      <section class="display__moves flex">
-        <div class="display__move-user display__move">
-          <span class="user__move-element">🤜</span>
+    <main class="main">
+      <section class="result-container">
+        <div class="results flex">
+          <!--user-->
+          <div class="result-user result flex">
+            <i class="fa-regular fa-hand-back-fist result-user-icon"></i>
+          </div>
+          <!--computer-->
+          <div class="result-computer result flex">
+            <i class="fa-regular fa-hand-back-fist result-computer-icon"></i>
+          </div>
         </div>
-        <div class="display__move-comp display__move">
-          <span class="comp__move-element">🤛</span>
+        <!--Reseult message -->
+        <p class="result-message">Let's Play!</p>
+      </section>
+
+      <section class="controlers">
+        <div class="moves-container flex">
+          <!--Rock-->
+          <button class="move flex" data-id="rock">
+            <i class="fa-regular fa-hand-back-fist"></i>
+            rock
+          </button>
+          <!--Paper-->
+          <button class="move flex" data-id="paper">
+            <i class="fa-regular fa-hand"></i>
+            paper
+          </button>
+          <!--Scissors-->
+          <button class="move flex" data-id="scissors">
+            <i class="fa-regular fa-hand-scissors"></i>
+            scissors
+          </button>
+        </div>
+        <button class="btn-reset">Reset</button>
+      </section>
+
+      <section class="scores flex">
+        <div class="scores-card flex">
+          <p class="scores-wins">
+            <strong>Wins:</strong> <span class="scores-wins-element">0</span>
+          </p>
+          <p class="scores-ties">
+            <strong>Ties:</strong> <span class="scores-ties-element">0</span>
+          </p>
+          <p class="scores-losses">
+            <strong>Losses:</strong>
+            <span class="scores-losses-element">0</span>
+          </p>
         </div>
       </section>
-      <p class="result__message">Let's Play!</p>
-      <section class="move-btn-container flex">
-        <button class="move-btn rock-move flex" data-id="rock">
-          🤘
-          <span class="move-btn-text">Rock</span>
-        </button>
-        <button class="move-btn paper-move flex" data-id="paper">
-          ✊
-          <span class="move-btn-text">Paper</span>
-        </button>
-        <button class="move-btn scissors-move flex" data-id="scissors">
-          ✌️
-          <span class="move-btn-text">Scissors</span>
-        </button>
-      </section>
-      <section class="score__board flex">
-        <p class="score__win score">
-          <strong>Won: </strong>
-          <span class="score__won-status score__status">0</span>
-        </p>
-        <p class="score__tie score">
-          <strong>Ties: </strong>
-          <span class="score__tie-status score-status">0</span>
-        </p>
-        <p class="score__loss score">
-          <strong>Losses: </strong>
-          <span class="score__loss-status score-status">0</span>
-        </p>
-      </section>
-      <button class="reset">Reset</button>
     </main>
+
+    <script src="index.js"></script>
   </body>
 </html>
