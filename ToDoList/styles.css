@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --clr-primary: #21ade4;
+  --clr-success: #69ef69;
+  --clr-denger: #f08080;
+  --clr-white: #eeeeee;
+  --clr-dark: #222831;
+  --clr-gry: #393e46;
+  --ff: Georgia, "Times New Roman", Times, serif;
+}
+body {
+  color: var(--clr-white);
+  background-color: var(--clr-gry);
+  font-family: var(--ff);
+  font-weight: lighter;
+  letter-spacing: 1.25px;
+}
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font-size: 0.875rem;
+  font-weight: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  user-select: none;
+}
+textarea,
+select,
+input::placeholder {
+  color: inherit;
+  font-weight: inherit;
+}
+button {
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+p {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+#ui__container {
+  width: 800px;
+  height: 100vh;
+  background: var(--clr-dark);
+  margin: auto;
+  position: relative;
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+.flex__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*--------- Navbar -----------*/
+.header {
+  height: 70px;
+  background-color: var(--clr-denger);
+}
+.nav {
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  user-select: none;
+}
+.search__bar {
+  min-width: 300px;
+  border: 2px solid currentColor;
+  padding: 0.625rem 1.5rem;
+  border-radius: 2.5rem;
+  justify-content: space-between;
+  gap: 0.625rem;
+}
+.search__input {
+  width: 100%;
+}
+.search__input::placeholder {
+  font-size: 0.875rem;
+}
+.theme__toggle {
+  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  background-color: var(--clr-dark);
+  border-radius: 50px;
+}
+.theme__toggle:hover {
+  background-color: rgba(34, 34, 34, 0.9);
+}

@@ -6,6 +6,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   --ls: 1.25px;
   --box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  --transition: all 500ms ease;
   --margin: 2rem;
   --gap: 2.5rem;
 }
@@ -46,7 +47,7 @@ main {
   position: relative;
   width: 600px;
   max-width: 600px;
-  height: calc(100vh - 30px);
+  /* height: calc(100vh - 30px); */
   box-shadow: var(--box-shadow);
   margin: auto;
   padding: 40px;
@@ -61,13 +62,20 @@ main {
   background-color: var(--clr-primary);
   box-shadow: var(--box-shadow);
   border-radius: 50%;
+  transition: var(--transition);
 }
 .result i {
   font-size: 3.5rem;
   transform: rotate(90deg);
 }
 .result-computer i {
-  transform: rotate(-90deg);
+  transform: rotate3d(1, 1, 0, 180deg);
+}
+.result-user .fa-hand-scissors {
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+.result-computer .fa-hand-scissors {
+  transform: rotate(0deg);
 }
 .result-message {
   font-size: 1.5rem;
@@ -87,13 +95,23 @@ main {
 .move i {
   font-size: 4rem;
 }
+.move .fa-hand-scissors {
+  transform: rotate(90deg);
+}
 .btn-reset {
   color: var(--clr-white);
   background-color: var(--clr-dark);
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--clr-dark);
   padding: 1rem 2.5rem;
   border-radius: 5px;
   text-transform: uppercase;
+  transition: var(--transition);
+  margin-bottom: 3.5rem;
+}
+.btn-reset:hover {
+  color: #2b2a2a;
+  background-color: var(--clr-white);
 }
 .scores {
   position: absolute;
@@ -102,4 +120,10 @@ main {
   bottom: 0;
   background-color: var(--clr-primary);
   padding: 1rem;
+  transition: var(--transition);
+}
+@media screen and (max-width: 600px) {
+  main {
+    width: 100%;
+  }
 }

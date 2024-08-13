@@ -1,5 +1,6 @@
 // selectors
-
+const displayUserResult = document.querySelector(".result-user");
+const displayComputerResult = document.querySelector(".result-computer");
 const displayUserResultIcons = document.querySelector(".result-user");
 const displayComputerResultIcons = document.querySelector(".result-computer");
 const displayResultMessage = document.querySelector(".result-message");
@@ -10,6 +11,7 @@ const displayScoresTiesElement = document.querySelector(".scores-ties-element");
 const displayScoresLossesElement = document.querySelector(
   ".scores-losses-element"
 );
+const displayScores = document.querySelector(".scores");
 const resetBtn = document.querySelector(".btn-reset");
 
 const scoresObject = JSON.parse(localStorage.getItem("scores")) || {
@@ -66,6 +68,8 @@ const handleMoveIcons = function (move) {
 const handleGameResult = function (userMove) {
   const computerMove = handleComputerMove();
   if (userMove === computerMove) {
+    displayComputerResult.style.backgroundColor = "#90ee90";
+    displayUserResult.style.backgroundColor = "#90ee90";
     return "Game Tie.";
   }
   if (
@@ -73,9 +77,15 @@ const handleGameResult = function (userMove) {
     (userMove === "paper" && computerMove === "rock") ||
     (userMove === "scissors" && computerMove === "paper")
   ) {
+    displayComputerResult.style.backgroundColor = "#dc143c";
+    displayUserResult.style.backgroundColor = "#90ee90";
+
     return "You Win the Game!";
+  } else {
+    displayComputerResult.style.backgroundColor = "#90ee90";
+    displayUserResult.style.backgroundColor = "#dc143c";
+    return "Computer win the Game!";
   }
-  return "Computer win the Game!";
 };
 
 const handleScoresObject = function (userMove) {
@@ -86,6 +96,11 @@ const handleScoresObject = function (userMove) {
     scoresObject.wins++;
   } else if (scores === "Computer win the Game!") {
     scoresObject.losses++;
+  }
+  if (scoresObject.wins < scoresObject.losses) {
+    displayScores.style.backgroundColor = "#dc143c";
+  } else {
+    displayScores.style.backgroundColor = "#90ee90";
   }
   handleScoresDisplay();
   localStorage.setItem("scores", JSON.stringify(scoresObject));
