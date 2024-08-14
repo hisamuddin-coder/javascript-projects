@@ -158,7 +158,7 @@ p {
   left: 0;
   top: 0;
 }
-.priority-1::before {
+.todo__item.priority-1::before {
   background-color: var(--clr-denger);
 }
 .priority-2::before {
