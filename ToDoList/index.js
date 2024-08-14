@@ -1,51 +1,64 @@
 "use strict";
+const btnFormOpen = document.querySelector(".form__open");
+const btnFormClose = document.querySelector(".close__form");
+const addTodoFormContinaer = document.querySelector(".add__todo-form");
+const todoForm = document.querySelector(".todo__form");
 
-const formOpenBtn = document.querySelector(".todo__btn");
-const formCloseBtn = document.querySelector(".close__form");
-const todos = document.querySelector(".todo__container");
-
-// Display Todo Form
-formOpenBtn.addEventListener("click", () => {
-  todos.classList.add("display");
-  formOpenBtn.style.display = "none";
+btnFormOpen.addEventListener("click", () => {
+  addTodoFormContinaer.style.display = "block";
 });
-formCloseBtn.addEventListener("click", () => {
-  todos.classList.remove("display");
-  formOpenBtn.style.display = "block";
+btnFormClose.addEventListener("click", () => {
+  addTodoFormContinaer.style.display = "none";
 });
 
-// Render data
-function renderTodoItem(data) {
-  const todoItmes = document.querySelector(".todo__itmes");
-  const html = `
-  <li class="todo__item ${data.priority}">
-    <div class="todo__header flex__center">
-      <h2 class="title">${data.title}</h2>
-      <div class="todo__icons flex__center">
-        <button
-          class="fa-solid fa-check todo__icon todo__icon-complete"
-        ></button>
-        <button
-          class="fa-regular fa-trash-can todo__icon todo__icon-delete"
-        ></button>
-        <button
-          class="fa-solid fa-pen todo__icon todo__icon-edit"
-        ></button>
-      </div>
-    </div>
-    <p class="desc">
-      ${data.description}
-    </p>
-  </li>
-  `;
-  todoItmes.insertAdjacentHTML("beforeend", html);
+document.addEventListener("DOMContentLoaded", function () {
+  displayStoredTodos();
+});
+
+function displayStoredTodos() {
+  const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+  storedTodos.forEach((todo) => handleDisplayTodoItmes(todo));
 }
 
-// Get Data
-const todoForm = document.querySelector(".todo__form");
-todoForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+function saveToLocalStorage(todo) {
+  const todos = JSON.parse(localStorage.getItem("todos")) || [];
+  todos.push(todo);
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
 
+// Display Items
+function handleDisplayTodoItmes(data) {
+  const todoItems = document.querySelector(".todo__items");
+  const listHtml = `
+    <li class="todo__item ${data.priority}">
+        <!--todo-header-->
+        <div class="todo__header flex__center">
+          <h2 class="todo__title">${data.title}</h2>
+          <div class="todo__icons flex__center">
+            <button
+              class="fa-solid fa-check todo__icon todo__icon-complete"
+            ></button>
+            <button
+              class="fa-regular fa-trash-can todo__icon todo__icon-delete"
+            ></button>
+            <button
+              class="fa-solid fa-pen todo__icon todo__icon-edit"
+             ></button>
+          </div>
+        </div>
+        <span class="date">${data.date}</span>
+        <span class="time">${data.time}</span>
+        <p class="desc">
+          ${data.description}
+        </p>
+    </li>
+  `;
+  todoItems.insertAdjacentHTML("beforeend", listHtml);
+}
+
+// Get data using form
+function hendleform(e) {
+  e.preventDefault();
   const formData = {
     title: document.querySelector(".title__input").value,
     description: document.querySelector(".description__input").value,
@@ -55,8 +68,10 @@ todoForm.addEventListener("submit", function (e) {
   };
   console.log(formData);
 
-  renderTodoItem(formData);
+  saveToLocalStorage(formData);
+  handleDisplayTodoItmes(formData);
+  addTodoFormContinaer.style.display = "none";
   e.target.reset();
-  todos.classList.remove("display");
-  formOpenBtn.style.display = "block";
-});
+}
+
+todoForm.addEventListener("submit", hendleform);

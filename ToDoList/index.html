@@ -21,79 +21,93 @@
     <div id="ui__container">
       <header class="header flex__center">
         <div class="container">
-          <nav id="nav" class="nav flex__center">
-            <!--Logo-->
-            <span class="logo">CheckItOff</span>
-            <!--Search-Bar-->
+          <!--nav-->
+          <nav class="nav flex__center">
+            <!--logo-->
+            <span class="logo">TodoListApp</span>
+            <!--search-bar-->
             <form class="search__bar flex__center">
               <input
-                type="text"
-                placeholder="Search...."
+                type="search"
+                placeholder="Search..."
                 class="search__input"
               />
               <button class="fa-solid fa-magnifying-glass"></button>
             </form>
-            <!--Toggle-->
+            <!--Theme Toggle-->
             <button class="theme__toggle fa-regular fa-moon"></button>
           </nav>
         </div>
       </header>
       <main>
-        <section class="todos">
+        <!--filter buttons-->
+        <section class="filters">
           <div class="container">
-            <!--filter-btns-->
-            <div class="filter__btns flex__center">
-              <button class="filter__btn active flex__center">
-                <span>today</span
-                ><span><i class="fa-regular fa-calendar"></i></span>
+            <div class="filter__btns">
+              <button class="filter__btn flex__center active">
+                <span>Today</span>
+                <span><i class="fa-regular fa-calendar"></i></span>
               </button>
               <button class="filter__btn flex__center">
-                <span>recent</span
-                ><span><i class="fa-solid fa-clock-rotate-left"></i></span>
+                <span>Recent</span>
+                <span
+                  ><span><i class="fa-solid fa-clock-rotate-left"></i></span
+                ></span>
               </button>
               <button class="filter__btn flex__center">
-                <span>upcoming</span
-                ><span><i class="fa-regular fa-calendar"></i></span>
+                <span>Upcoming</span>
+                <span><i class="fa-regular fa-calendar"></i></span>
               </button>
             </div>
           </div>
-          <ul class="todo__itmes"></ul>
         </section>
-        <!-- <section id="todos" class="todos">
-          
-        </section> -->
-        <!--todo-form-btn-->
-        <div class="todo__btn-container">
-          <button class="fa-solid fa-plus todo__btn"></button>
+        <!--Todos-->
+        <div class="todos">
+          <div class="container">
+            <ul class="todo__items">
+              <!--todo-itme-->
+            </ul>
+          </div>
         </div>
-        <!--TODO FORM-->
-        <div class="todo__container">
-          <h3>Add Your Task</h3>
-          <span class="close__form"><i class="fa-solid fa-xmark"></i></span>
+        <!--add todo form-->
+        <section class="add__todo-form">
+          <h3>Add Your Task...</h3>
+          <button class="fa-solid fa-xmark close__form"></button>
+          <!-- todo-form -->
           <form class="todo__form">
-            <div class="todo__form-input">
+            <div class="form__input-box">
               <input
                 type="text"
-                placeholder="add you task"
+                placeholder="Add your task..."
                 class="title__input"
               />
             </div>
-            <div class="todo__form-input-group">
-              <input type="date" class="date__input" />
-              <input type="time" class="time__input" />
-              <select name="" id="" class="priority__input">
-                <option value="priority-1">Priority-1</option>
-                <option value="priority-2">Priority-3</option>
-                <option value="priority-3">Priority-3</option>
-              </select>
+            <div class="form__input-group flex__center">
+              <div class="form__input-box">
+                <input type="date" class="date__input" />
+              </div>
+              <div class="form__input-box">
+                <input type="time" class="time__input" />
+              </div>
+              <div class="form__input-box">
+                <select class="priority__input">
+                  <option value="priority-1">Priority-1</option>
+                  <option value="priority-2">Priority-2</option>
+                  <option value="priority-3">Priority-3</option>
+                </select>
+              </div>
             </div>
-            <textarea
-              placeholder="Add description..."
-              class="description__input"
-            ></textarea>
+            <div class="form__input-box">
+              <textarea
+                rows="5"
+                placeholder="Add description..."
+                class="description__input"
+              ></textarea>
+            </div>
             <input type="submit" value="submit" class="submit__btn" />
           </form>
-        </div>
+        </section>
+        <button class="fa-solid fa-plus form__open"></button>
       </main>
     </div>
   </body>
