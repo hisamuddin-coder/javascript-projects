@@ -13,7 +13,13 @@
           <h2 class="title">Enter bill total</h2>
           <div class="input-container flex">
             <span>$</span>
-            <input type="text" id="bill-total-input" placeholder="0.00" />
+            <input
+              onkeyup="calculateBill()"
+              type="text"
+              id="bill-total-input"
+              placeholder="0.00"
+              autocomplete="off"
+            />
           </div>
         </div>
         <div class="tip-container m-b">
@@ -26,7 +32,13 @@
               <button class="tip-btn">25%</button>
             </div>
             <div class="input-container">
-              <input type="text" id="tip-input" placeholder="custom tip" />
+              <input
+                onkeyup="calculateBill()"
+                type="text"
+                id="tip-input"
+                placeholder="custom tip"
+                autocomplete="off"
+              />
             </div>
           </div>
         </div>
@@ -52,49 +64,12 @@
             </div>
             <div class="right">
               <h2 class="title">tip</h2>
-              <p>$ <span class="total-tip">0:00</span></p>
+              <p>$ <span class="total-tip-el">0:00</span></p>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- <div class="container top-container">
-        <h2 class="title">Enter Bill Total</h2>
-        <div class="input-container">
-          <span>$</span>
-          <input type="text" id="bill-total-input" placeholder="0.00" />
-        </div>
-      </div>
-      <div class="container">
-        <h2 class="title">Choose Tip</h2>
-        <input type="text" id="tip-input" placeholder="custom tip" />
-      </div>
-      <div class="container">
-        <div class="split-container">
-          <h2 class="title">split</h2>
-          <div class="controls">
-            <button>+</button>
-            <span class="num-people">1</span>
-            <button>-</button>
-          </div>
-        </div>
-      </div>
-      <div class="total-container">
-        <div>
-          <h2>Totol per person</h2>
-          <span class="total per-person-total">$0.00</span>
-        </div>
-        <div>
-          <div>
-            <h2>bill</h2>
-            <span class="bill-amount">$0.00</span>
-          </div>
-          <div>
-            <h2>tip</h2>
-            <span class="tip-amount">$0.00</span>
-          </div>
-        </div>
-      </div> -->
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
