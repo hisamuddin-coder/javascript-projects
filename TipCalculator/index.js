@@ -27,7 +27,7 @@ const calculateBill = function () {
   const perPersonTotal = total / numOfPeople;
   totalPerPersonEl.innerText = `${perPersonTotal.toFixed(2)}`;
   totalBill.innerText = `${total.toFixed(2)}`;
-  totalTipEl.innerText = `${totalTip}`;
+  totalTipEl.innerText = `${totalTip.toFixed(2)}`;
 };
 calculateBill();
 

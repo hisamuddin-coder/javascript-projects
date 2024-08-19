@@ -51,7 +51,7 @@ function newGame() {
   secretDigit = Math.floor(Math.random() * 20) + 1;
   message.textContent = "Start guessing...";
   scoreNumber.textContent = scoreDigit;
-  guessNumber.textContent = "?";
+  secretNumber.textContent = "?";
   guessNumber.value = "";
   document.querySelector("body").style.backgroundColor = "#31363f";
   secretNumber.style.backgroundColor = "#dc143c";
