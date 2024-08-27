@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--css link-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--cdn link-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--javascript-->
+    <script defer src="index.js"></script>
+
+    <title>Pig Game</title>
+  </head>
+  <body>
+    <main>
+      <section class="plyer plyer--0 plyer--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="socre--0">0</p>
+        <div class="current">
+          <div class="current-label">Current</div>
+          <p class="current-score" id="current--0">0</p>
+        </div>
+      </section>
+
+      <section class="plyer plyer--1">
+        <h2 class="name" id="name--0">Player 2</h2>
+        <p class="score" id="socre--0">0</p>
+        <div class="current">
+          <div class="current-label">Current</div>
+          <p class="current-score" id="current--1">0</p>
+        </div>
+      </section>
+
+      <img src="img/dice-5.png" alt="Playing dice" class="dice" />
+      <button class="btn btn-new">
+        <span><i class="fa-solid fa-shuffle"></i></span> New game
+      </button>
+      <button class="btn btn-roll">
+        <span><i class="fa-solid fa-dice"></i></span> Roll dice
+      </button>
+      <button class="btn btn-hold">
+        <span><i class="fa-solid fa-gavel"></i></span> Hold
+      </button>
+    </main>
+  </body>
+</html>
