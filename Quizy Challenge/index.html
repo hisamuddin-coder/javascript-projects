@@ -15,7 +15,7 @@
         <button class="btn" id="start-btn">Start</button>
         <div class="start-container-footer">
           <div class="left">
-            <p><span>17</span> Qusetions</p>
+            <p><span class="total-questions">17</span> Qusetions</p>
           </div>
           <div class="right">
             <p>Timer</p>
@@ -36,8 +36,11 @@
             <h1>Guess the game Quiz</h1>
           </div>
           <div class="col-right">
-            <div class="timer">13</div>
-            <div class="no-of-question">1/13</div>
+            <div class="timer">00</div>
+            <div class="question-counter">
+              <span class="current-question-no">1</span>/
+              <span class="total-questions"></span>
+            </div>
             <div class="score">0</div>
           </div>
         </header>
@@ -82,16 +85,17 @@
       <div class="restults-container hidden">
         <header class="header">
           <div class="btn-container">
-            <button class="score">Score</button>
-            <button class="answers">Answers</button>
-            <button class="Leadershipboard">Leaderboard</button>
+            <button class="score-tab">Score</button>
+            <button class="answers-tab">Answers</button>
+            <button class="Leadershipboard-tab">Leaderboard</button>
           </div>
         </header>
         <div class="current-score-card">
           <h1>Guess the game Quiz</h1>
           <div class="current-score">
             <p class="no-of-correct-answers">
-              07 / <span class="no-of-questions">17</span>
+              <span class="score">00</span> /
+              <span class="total-questions"></span>
             </p>
             <p class="points">3500</p>
           </div>
