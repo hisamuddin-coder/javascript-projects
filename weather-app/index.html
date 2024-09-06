@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!----------------- CSS ------------------>
+    <link rel="stylesheet" href="styles.css" />
+    <!----------------- JAVASCRIPT ------------------>
+    <script defer src="index.js"></script>
+    <!----------------- CDN LINK ------------------>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Weather-check</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <!--Search bar-->
+        <form action="#" id="form" class="form">
+          <input
+            type="text"
+            placeholder="Search Courses"
+            name="search"
+            class="search"
+          />
+          <button class="search-btn">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </header>
+      <main>
+        <!--location-->
+        <h1 class="current__location">
+          <span><i class="fa-solid fa-location-dot"></i></span>
+          <span id="location">Delhi, India</span>
+        </h1>
+        <figure class="current__weather">
+          <img src="images/clouds.png" alt="cloud" id="wheather__img" />
+          <figcaption>
+            <p class="current__weather-temp">
+              <span class="current__weather-temp-el"></span>&deg;C
+            </p>
+            <p class="current__weather-desc">ThunderStorm</p>
+            <p class="current__date"></p>
+          </figcaption>
+        </figure>
+
+        <div class="cards">
+          <div class="card">
+            <span class="card__icon"><i class="fa-solid fa-wind"></i></span>
+            <p class="card__desc"><span class="wind__speed"></span>km/h</p>
+            <p class="card__title">Wind</p>
+          </div>
+
+          <div class="card">
+            <span class="card__icon"><i class="fa-solid fa-droplet"></i></span>
+            <p class="card__desc"><span class="humidity__measure"></span>%</p>
+            <p class="card__title">Humidity</p>
+          </div>
+
+          <div class="card">
+            <span class="card__icon"
+              ><i class="fa-solid fa-cloud-rain"></i
+            ></span>
+            <p class="card__desc"><span class="rain__chance"></span>%</p>
+            <p class="card__desc">Chance of rain</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
