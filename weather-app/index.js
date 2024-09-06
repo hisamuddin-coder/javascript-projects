@@ -37,6 +37,38 @@ const renderData = function (data) {
   rainEl.innerHTML = `${data.clouds.all}`;
 };
 
+// User location
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+// Display weather by geolocation
+const displayWeather = async function () {
+  try {
+    const pos = await getPosition();
+    const { latitude: lat, longitude: lng } = pos.coords;
+    console.log(lat, lng);
+    await fetchWeatherByCoords(lat, lng);
+  } catch (error) {
+    console.log("Geolocation Error:", error);
+  }
+};
+displayWeather();
+
+// Get data by coordinates
+const fetchWeatherByCoords = async function (lat, lng) {
+  try {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${api_key}&units=metric`;
+    const res = await fetch(url);
+    const data = await res.json();
+    renderData(data);
+  } catch (error) {
+    console.log("Error fetching weather data by coordinates:", error);
+  }
+};
+
 // Get data by city name
 const fetchWeatherByCity = async function (city) {
   try {
@@ -48,7 +80,6 @@ const fetchWeatherByCity = async function (city) {
       return;
     }
     renderData(data);
-    console.log(data);
   } catch (error) {
     console.log("Error fetching weather data by city:", error);
   }
@@ -63,4 +94,5 @@ formEl.addEventListener("submit", function (e) {
     return;
   }
   fetchWeatherByCity(city);
+  searchEl.value = "";
 });
