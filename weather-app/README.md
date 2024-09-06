@@ -1,6 +1,8 @@
 # Weather App
-
 A simple weather application built using JavaScript, HTML, and CSS.
+
+![screenshot](https://github.com/user-attachments/assets/e800b33d-f004-46cf-b75f-d5c5565f57ab)
+
 
 ## Features
 
