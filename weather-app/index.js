@@ -64,6 +64,7 @@ const fetchWeatherByCoords = async function (lat, lng) {
     const res = await fetch(url);
     const data = await res.json();
     renderData(data);
+    showPreloader();
   } catch (error) {
     console.log("Error fetching weather data by coordinates:", error);
   }
@@ -85,6 +86,11 @@ const fetchWeatherByCity = async function (city) {
   }
 };
 
+const showPreloader = function () {
+  document.getElementById("preloader").classList.add("hidden");
+  document.querySelector(".container").classList.remove("hidden");
+};
+
 // Search functionality
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -93,6 +99,7 @@ formEl.addEventListener("submit", function (e) {
     alert("Please enter a city name.");
     return;
   }
+  showPreloader();
   fetchWeatherByCity(city);
   searchEl.value = "";
 });

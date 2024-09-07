@@ -18,7 +18,11 @@
     <title>Weather-check</title>
   </head>
   <body>
-    <div class="container">
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+      <div class="spinner"></div>
+    </div>
+    <div class="container hidden">
       <header>
         <!--Search bar-->
         <form action="#" id="form" class="form">
@@ -41,7 +45,7 @@
           <span id="location">Delhi, India</span>
         </h1>
         <figure class="current__weather">
-          <img src="images/clouds.png" alt="cloud" id="wheather__img" />
+          <img src="images/mist.png" alt="cloud" id="wheather__img" />
           <figcaption>
             <p class="current__weather-temp">
               <span class="current__weather-temp-el"></span>&deg;C
@@ -54,7 +58,7 @@
         <div class="cards">
           <div class="card">
             <span class="card__icon"><i class="fa-solid fa-wind"></i></span>
-            <p class="card__desc"><span class="wind__speed"></span>km/h</p>
+            <p class="card__desc"><span class="wind__speed"></span>m/s</p>
             <p class="card__title">Wind</p>
           </div>
 

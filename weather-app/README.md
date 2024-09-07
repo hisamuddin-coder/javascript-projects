@@ -7,7 +7,7 @@ A simple weather application built using JavaScript, HTML, and CSS.
 - Displays current weather information
 - Supports multiple cities
 - Displays current location's weather information
-- Displays search location's weather infromationgi
+- Displays search location's weather infromation
 
 ## Setup
 
@@ -17,3 +17,9 @@ A simple weather application built using JavaScript, HTML, and CSS.
 ## Dependencies
 
 - None
+
+## Links
+
+-Images downloaded from vecteezy.com
+
+[I'm an inline-style link with title](https://www.vecteezy.com/ "vecteezy's Homepage")
