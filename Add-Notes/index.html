@@ -9,5 +9,45 @@
     <!--- Javascript --->
     <script defer src="app.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header>
+        <h6 class="logo">Notes</h6>
+      </header>
+      <main>
+        <!--Add Notes-->
+        <section id="notes">
+          <ul class="notes__container">
+            <li class="notes__item">
+              <h3 class="notes__title">Title</h3>
+              <p class="notes__desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+                numquam consequuntur qui repellendus amet fuga excepturi at
+                magni? Eius, adipisci?
+              </p>
+              <p class="notes__date">today</p>
+            </li>
+          </ul>
+        </section>
+        <section id="add__notes">
+          <form action="#" class="add__notes-form">
+            <div class="row">
+              <label for="title">Title</label><br />
+              <input type="text" id="title" name="title" class="title__input" />
+            </div>
+            <div class="input__group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" class="date__input" />
+            </div>
+            <div>
+              <label for="desc">Review of W3Schools:</label>
+              <textarea id="desc" name="desc" rows="4" cols="50"></textarea>
+            </div>
+            <input type="submit" class="btn" />
+          </form>
+          <button class="add__notes-btn">+</button>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
