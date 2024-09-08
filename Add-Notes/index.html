@@ -22,6 +22,7 @@
         <h6 class="logo">Notes</h6>
       </header>
       <main>
+        <div id="overlay" class="overlay"></div>
         <!--Add Notes-->
         <section id="notes">
           <ul class="notes__container">
@@ -59,10 +60,15 @@
             </div>
             <div class="input__group">
               <label for="desc">Descriptions:</label>
-              <textarea id="desc" name="desc" rows="4"></textarea>
+              <textarea
+                id="desc"
+                name="desc"
+                rows="4"
+                class="desc__input"
+              ></textarea>
             </div>
             <input type="submit" class="btn form__btn" />
-            <button class="close__form">X</button>
+            <button class="fa-solid fa-xmark close__form"></button>
           </form>
           <button class="add__notes-btn">+</button>
         </section>
