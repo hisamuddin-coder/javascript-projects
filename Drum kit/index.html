@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Durm Kit</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="png" href="favicon-16x16.png" />
+    <link rel="icon" type="png" href="images/favicon-16x16.png" />
+    <script defer src="index.js"></script>
   </head>
   <body>
     <h1>
-      <span>Drum</span><img src="drumkit.png" alt="drumkit" /><span>Kit</span>
+      <span>Drum</span><img src="images/drumkit.png" alt="drumkit" /><span
+        >Kit</span
+      >
     </h1>
     <div class="drum-set">
-      <button class="a drum">a</button>
-      <button class="b drum">b</button>
-      <button class="d drum">d</button>
-      <button class="f drum">f</button>
-      <button class="j drum">j</button>
-      <button class="k drum">k</button>
-      <button class="l drum">l</button>
+      <button class="drum a" data-sound="crash">a</button>
+      <button class="drum s" data-sound="kick-bass">s</button>
+      <button class="drum d" data-sound="snare">d</button>
+      <button class="drum f" data-sound="tom-1">f</button>
+      <button class="drum j" data-sound="tom-2">j</button>
+      <button class="drum k" data-sound="tom-3">k</button>
+      <button class="drum l" data-sound="tom-4">l</button>
     </div>
   </body>
 </html>

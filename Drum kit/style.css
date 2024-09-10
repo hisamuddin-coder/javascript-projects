@@ -5,7 +5,7 @@
 }
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: linear-gradient(
@@ -29,7 +29,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("https://images.pexels.com/photos/1545505/pexels-photo-1545505.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-image: url("images/bg.jpeg");
   background-clip: text;
   margin-bottom: 1rem;
 }
@@ -39,6 +39,7 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 .drum {
   color: rgb(32, 38, 57);
@@ -54,4 +55,35 @@ h1 {
   justify-content: center;
   border: 5px solid #ff0844;
   border-radius: 1rem;
+  background-size: cover;
+}
+
+button:first-child {
+  background-image: url("images/crash.png"),
+    linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+  background-size: cover;
+}
+button:nth-child(2) {
+  background-image: url("images/kick-base.png"),
+    linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+button:nth-child(3) {
+  background-image: url("images/snare.png"),
+    linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+button:nth-child(4) {
+  background-image: url("images/hi-hat.png"),
+    linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+button:nth-child(5) {
+  background-image: url("images/hi-tom.png"),
+    linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+button:nth-child(6) {
+  background-image: url("images/mid-tom.png"),
+    linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+button:last-child {
+  background-image: url("images/base-drum.png"),
+    linear-gradient(to top, #ff0844 0%, #ffb199 100%);
 }
